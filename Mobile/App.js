@@ -1,107 +1,75 @@
 import React, { useState, useReducer, Component } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Alert, FlatList } from 'react-native';
+// import { createAppContainer } from 'react-navigation';
+// import { createBottomTabNavigator } from 'react-navigation-tabs';
+// import {createStackNavigator} from 'react-navigation-stack'
+// import HomeScreen from './HomeScreen';
+import SettingScreen from './SettingScreen';
+import HomeScreen from './HomeScreen';
+import GoalItem from './GoalItem';
 
+/*
+const AppNavigator =  createStackNavigator({
+  Home: {screen: HomeScreen},
+  Settings: {screen: SettingScreen}
+  });
+  const AppContainer = createAppContainer(AppNavigator);
+*/
 
-function App() {
-  const [data, setData] = useState([]);
-  const [integer1, setInteger1] = useState(0);
-  const [integer2, setInteger2] = useState(0);
+const App = () => {
+  const [courseGoals, setCourseGoals] = useState([]);
+ 
+//  const [integer2, setInteger2] = useState('');
 
+  
 
-  const doTheSum = () => {
-    const summa = integer1+integer2  
-    const teksti = (`${integer1} + ${integer2} = ${summa}`);
-    setData([...data, {key: teksti}]);
-    
-    }
-
-  const doTheSubtrack = () => {
-    const summa = integer1-integer2  
-    const teksti = (`${integer1} - ${integer2} = ${summa}`)
-    setData([...data, {key: teksti}]);
-    
-    }
-
-  const listCleared = () => {
-    setData([]);
-    
+  const addGoalHandler = (goalTitle) => {
+    setCourseGoals(currentGoals => [
+      ...currentGoals,
+      { id: Math.random().toString(), value: goalTitle}
+    ])
   }
+
+  const removeGoalHandler = goalId => {
+    setCourseGoals(currentGoals => {
+      return currentGoals.filter((goal) => goal.id !== goalId);
+    })
+  }
+  
     
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+    listItem: {
+      padding: 10,
+      marginVertical: 10,
+      backgroundColor: '#ccc',
+      borderColor: 'black'
     },
-    buttonBox: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      
-    },
-    inputBox: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-     
-    inputStyle: {
-      width: 200, 
-      borderColor: 'gray', 
-      borderWidth: 1
+    screen: {
+      padding: 50
     }
   });
 
   return (
-   <View style={styles.container}>
-      
-     <View style={styles.inputBox}>
-      <TextInput
-        style={{width: 200, borderColor: 'gray', borderWidth: 1}}
-        keyboardType={'numeric'}
-        onChangeText={num => setInteger1(parseInt(num))}
-        value={integer1}
+   <View style={styles.screen}>
+     
+    <HomeScreen
+      onAddGoal={addGoalHandler} />
+    <FlatList
+        keyExtractor={(item, index) => item.id}
+        data={courseGoals}
+        renderItem={itemData => (
+        <GoalItem 
+        id={itemData.item.id} 
+        onDelete={removeGoalHandler} 
+         title={itemData.item.value}
+         /> 
+        )}
+       
       />
-      <TextInput
-        style={{width: 200, borderColor: 'gray', borderWidth: 1}}
-        keyboardType={'numeric'}
-        onChangeText={num => setInteger2(parseInt(num))}
-        value={integer2}
-      />
-      
-    </View>
-    <View style={styles.inputBox}>
-      <View style={styles.buttonBox}>
-          <Button title="+" onPress={doTheSum}  />
-          <Button title="-" onPress={doTheSubtrack} />
-          <Button title="Clear" onPress={listCleared}  />
-      </View>
-      
-    
-    </View>
-    
-  
-  
-    <View style={styles.inputBox}>
-        
-      <FlatList 
-        data={data}
-        renderItem={({item}) => 
-          <Text>{item.key}</Text>
-        }
-        keyExtractor={(item, index) => index.toString()}
-      />
-    </View>
-    
-    </View>
-  
+
+    </View>  
   );
 }
-
-
-
 
 
 export default App;
