@@ -1,21 +1,64 @@
 import React, { useState, useReducer, Component } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Alert, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Alert, FlatList, AsyncStorage } from 'react-native';
 
 
 function App() {
+  const [result, setResult] = useState(0);
+  const [guess, setGuess] = useState('');
+  const [counter, setCounter] = useState(0);
   const [text, setText] = useState('');
-  const [data, setData] = useState([]);
+  const [score, setScore] = useState(0);
 
-  const itemAdded = () => {
-    setData([...data, {key: text}]);
+
+  const startTheGame = () => {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    setResult(randomNumber)
+    setCounter(0)
     setText('')
+  }
+
+  const makeTheGuess = async () => {
+      if (parseInt(guess) < result){
+        setText('Your guess ' + guess + ' is too low')
+        setCounter(counter + 1);
+      } 
+  
+      if (parseInt(guess) > result) {
+        setText('Your guess ' + guess + ' is too high')
+        setCounter(counter + 1);
+      } 
+      if (parseInt(guess) === result) {
+        Alert.alert('Congratulation! You guessed the number in ' + counter + ' guesses')
+        setGuess('')
+        try {
+          let highscore = await AsyncStorage.getItem('highScore');
+          console.log( (highscore), 'reading the highscore')
+          if (highscore === null) {
+            let hs = await AsyncStorage.setItem('highScore', counter.toString());
+            console.log(hs, 'value, highscore is null')
+            setScore(counter)
+          } 
+          if ( highscore > counter ) {
+            let hs = await AsyncStorage.setItem('highScore', counter.toString());
+            console.log(hs, ' highscore is higher than counter')
+            setScore(counter)
+          } 
+          if ( highscore < counter ) {
+            console.log('highscore is lower')
+          } 
+          if ( highscore === counter ) {
+            console.log('highscore is the same as your result')
+          } 
+        } catch (error) {
+          Alert.alert('Error reading data');
+        }
+     
+        
+        
+      }  
     }
 
-  const listCleared = () => {
-    setData([]);
-    setText('')
-    
-  }
+  
     
   const styles = StyleSheet.create({
     container: {
@@ -49,39 +92,40 @@ function App() {
       
     <View style={styles.inputBox}>
       <Text>
-        Shopping list
+       {text}
       </Text>
-    </View>
-    <View style={styles.inputBox}> 
-      <View style={styles.buttonBox}>
-          <Button title="Add" onPress={itemAdded}  />
-          <Button title="Clear" onPress={listCleared}  />
-      </View>
       <TextInput
         style={styles.inputStyle}
-       
-        onChangeText={text => setText(text)}
-        value={text}
+        keyboardType={'numeric'}
+        onChangeText={num => setGuess(num)}
+        value={guess}
       />
-        
-      <FlatList 
-        data={data}
-        renderItem={({item}) => 
-          <Text>{item.key}</Text>
-        }
-      />
+      
+      
     </View>
-    <View style={styles.inputStyle}>
-
-
-    </View>
+    <View style={styles.inputBox}>
+      <View style={styles.buttonBox}>
+          <Button title="Start the Game" onPress={startTheGame}  />
+          <Button title="Make Guess" onPress={makeTheGuess} />
+         
+      </View>
+      
     
+    </View>
+   
+  
+  
+    <View style={styles.inputBox}>
+     <Text>
+       Highscore is {score} attempts
+     </Text>
+    
+    </View>
+
     </View>
   
   );
 }
-
-
 
 
 
