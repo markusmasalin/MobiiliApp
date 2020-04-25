@@ -1,26 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import * as Location from 'expo-location';
 
 export default function App() {
   const [address, setAddress] = useState('');
-  const [markers, setMarkers] = useState([{
-    
-      lat: 60.200692,
-      lng: 24.934302,
-      name: 'Haaga-Helia'
-    
-  }])
-  const [locations, setLocations] = useState({
-    latitude: 60.200692,
-    longitude: 24.934302,
-    latitudeDelta: 0.0644,
-    longitudeDelta: 0.0442,
-  });
+  const [location, setLocation] = useState(null);
  
   useEffect(() => {
    
-    
+    getLocation();
   
    
   }, []);
@@ -33,12 +22,14 @@ export default function App() {
     }
     else {
     let location = await Location.getCurrentPositionAsync({});
-    setLocation(location);
+    console.log(location, 'location')
+    const fetchedObject = ({...location, latitude: location.coords.latitude, longitude: location.coords.longitude, latitudeDelta: 0.0322,
+      longitudeDelta: 0.0221 })
+    setLocation(fetchedObject);
     }
     };
 
-  console.log(locations, 'locations')
-  console.log(markers, 'markers')
+  console.log(location, 'locations')
   const fetchAddress = () => {
     fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=9ktigSO6qu32wscTGAj5zfEdCDBT6Jdg&location=${address}`)
     .then((response) => response.json())
@@ -49,9 +40,9 @@ export default function App() {
       const latNumber = Number(lat)
       const lngNumber = Number(lng)
     
-      const fetchedObject = ({...locations, latitude: latNumber, longitude: lngNumber })
-      setLocations(fetchedObject)
-      fetchRestaurants()
+      const fetchedObject = ({latitude: latNumber, longitude: lngNumber,  latitudeDelta: 0.0322,
+        longitudeDelta: 0.0221  })
+      setLocation(fetchedObject)
       
     })
     .catch((error) => { 
@@ -59,47 +50,21 @@ export default function App() {
     }); 
 
   }
-
-  const fetchRestaurants = () => {
-    fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${locations.latitude},${locations.longitude}&radius=1500&type=restaurant&rankBy=distance&key=AIzaSyBZKh8IFdv53AGC6O-zHc2pFyNIp6ruZ8Y`)
-    .then((response) => response.json())
-    .then((responseJson) => { 
-      console.log(responseJson, 'responseJson')
-      let markerList = responseJson.results.map(o => {
-       
-        let object = {}
-        object['name'] = o.name
-        object['lat'] = Number(o.geometry.location.lat)
-        object['lng'] = Number(o.geometry.location.lng)
-        return object
-        
-        
-        
-       
-    })
-    setMarkers(markerList)
-      
-    })
-    .catch((error) => { 
-      Alert.alert('Error' , error); 
-    }); 
+  if(location === null) {
+    return (
+      <View>
+        <Text>
+          Loading...
+        </Text>
+      </View>
+    )
   }
   
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map} 
-        region={locations}>
-        {markers.map((marker, index) => (
-          <MapView.Marker key={index} 
-          coordinate={{
-            latitude: marker.lat,
-            longitude: marker.lng
-          }}
-          title={marker.name}
-          description={marker.name}
-          />
-        ))}
+        region={location}>
         
       </MapView>
       <View>
@@ -111,6 +76,7 @@ export default function App() {
       />
       
      <Button title="Show" onPress={fetchAddress} />
+     <Button title="Location" onPress={getLocation} />
       </View>
       
     </View>
