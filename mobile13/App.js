@@ -100,10 +100,7 @@ return (
 
         
         />
-      /*
-      <View style={styles.listcontainer}><Text style={{fontSize: 18}}>{item.product}, {item.amount}</Text>
-         <Text style={{fontSize: 18, color: '#0000ff'}} onPress={() => deleteItem(item.id)}> Bought</Text></View>} 
-      */
+      
       }
       ItemSeparatorComponent={listSeparator} 
     />
