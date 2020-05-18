@@ -1,0 +1,419 @@
+[
+    {
+        "id": "1",
+        "exerciseHeader": "Exercise 1",
+        "exerciseIntro": "Read the text carefully and then answer the questions. Choose the best alternative for each item.",
+        "color": "#f5428d",
+        "items": [
+            {
+                "id": 1,
+                "exerciseTag": "Exercise 1.1",
+                "text": "Becoming a fulltime author is hard. Sadly, no matter what your loved ones tell you, there is no guarantee that your brilliant idea is going to mature into a bestseller. Like everyone else, you have to pay the rent and buy food. The poet T.S. Eliot worked in a bank. Novelist Anthony Trollope toiled away in a post office. Joseph Conrad was a sea captain, Arthur Conan Doyle was a medical doctor, and Lewis Carroll was a lecturer in mathematics at Oxford. But it’s hard to keep at a fulltime job when you’re spending hours at the keyboard working on your masterpiece. Today, many writers hedge their bets. They first study and obtain a professional qualification before they embark on a career of full time writing.",
+                "question": "1.1 In this context, ”to mature into” means",
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: to become a successful book.",
+                        "value": true
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: to become less childish book.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: that the bestseller will be for mature adults.",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "exerciseTag": "Exercise 1.2",
+                "text": "Becoming a fulltime author is hard. Sadly, no matter what your loved ones tell you, there is no guarantee that your brilliant idea is going to mature into a bestseller. Like everyone else, you have to pay the rent and buy food. The poet T.S. Eliot worked in a bank. Novelist Anthony Trollope toiled away in a post office. Joseph Conrad was a sea captain, Arthur Conan Doyle was a medical doctor, and Lewis Carroll was a lecturer in mathematics at Oxford. But it’s hard to keep at a fulltime job when you’re spending hours at the keyboard working on your masterpiece. Today, many writers hedge their bets. They first study and obtain a professional qualification before they embark on a career of full time writing.",
+                "question": "1.2 Why does the writer list so many authors from the past in the first paragraph?",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: To give the reader more interesting information about those famous authors.",
+                        "value": true
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: To show how hardworking and versatile those authors were.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: To emphasize the point that writers cannot always make a living from book sales alone.",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "exerciseTag": "Exercise 1.3",
+                "text": "Take Anne Holt, for example. One of Norway’s bestselling crime writers, her books are published in 25 languages. Ms Holt qualified as a lawyer, worked for the Oslo Police Department for two years and established her own law firm. She also served as Norway’s Minister for Justice in 1996 and 1997. The American novelist, John Grisham, writes primarily legal thrillers, many of which had been adapted into films. However, he first did a degree in accounting. He then studied law in order to become a tax lawyer, but became more interested in litigation and criminal law. For about a decade he worked as a lawyer and a politician before giving up his day job to become a fulltime writer. His first book was rejected by 28 publishers before an unknown publisher agreed to a modest print run.",
+                "question": "1.3 According to this text, both Anne Holt and James Grisham",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: were lawyers and politicians. ",
+                        "value": true
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: are bestselling authors whose books have been made into films. ",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: have become famous around the world because their works have been translated into many languages. ",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "exerciseTag": "Exercise 1.4",
+                "text": "According to Forbes magazine, the bestselling author in the world in 2017 was James Patterson. The son of an insurance salesman and a schoolteacher, Patterson first did a degree in English, and then worked for an advertising agency before becoming a fulltime writer. The Encyclopaedia Britannica writes that his ”prolific output and business savvy made him a ubiquitous presence on bestseller lists in the late 20th and early 21st centuries.",
+                "question": "1.4 What does the entry in the Encyclopaedia Brittanica imply about James Patterson?",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: That he writes many very good books, and that he is therefore very popular.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: That quantity, not the quality of his writing, keeps him on bestseller lists.",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: He is on the bestseller lists because he is a ubiquitous presence.",
+                        "value": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "exerciseHeader": "Exercise 2",
+        "exerciseIntro": "Read the text carefully and then answer the questions. Choose the best alternative for each item.",
+        "color": "#f54242",
+        "items": [
+            {
+                "id": 1,
+                "exerciseTag": "Exercise 2.1",
+                "text": "What is the difference between outsourcing and crowdsourcing? Apart from the word ‘sourcing’ they don’t actually have that much in common.",
+                "question": "2.1 Outsourcing and crowdsourcing ",
+                "options": [
+                   
+                    {
+                        "id": "1",
+                        "text": "a: have nothing in common.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: only have the word ‘sourcing’ in common.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: have some, but not many,  elements in common.",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "exerciseTag": "Exercise 2.2",
+                "text": "Crowdsourcing is a portmanteau word, coined from “crowd” and “outsourcing”.  Crowdsourcing is often used to raise funds online for start-up companies and charities. Wikipedia is probably the best-known example of crowdsourcing. Instead of Wikipedia hiring their own in-house writers and editors,  the public writes and contributes the information. The crowd combines their different ideas, skills and information to create the most comprehensive online encyclopaedia the world has ever seen.",
+                "question": "2.2 According to the text, which statement about Wikipedia is the most accurate? ",
+               
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: It is the most famous example of crowdsourcing today.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: It has outsourced its main function to the public at large.",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: It sometimes raises funds online, often to assist start-up companies.",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "exerciseTag": "Exercise 2.3",
+                "text": " However, this way of working is a double-edged sword. The company is the first to point out that since the pages can be edited by anyone at any time, Wikipedia cannot be a reliable source in the way that the Encyclopaedia Britannica is, for instance. Any information it contains at any particular time could be written by someone with a hidden agenda.",
+                "question": "2.3 What is implied about Wikipedia contributors? Choose the most correct option.",
+
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: They give their expert knowledge freely to create a good online encyclopaedia.   ",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: Many of them post reliable information, but some deliberately lie.",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c:You cannot trust the contributors because you don’t know their agenda.",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "exerciseTag": "Exercise 2.4",
+                "text": "Outsourcing is the process of contracting out an internal business process to another business that specializes in that specific work. This process is considered more cost effective than maintaining in-house employees to do the task. The outsourced function is usually not related to the core business. A bank, for instance, might outsource their IT maintenance services.",
+                "question": "2.4 Which statement about outsourcing is the most accurate? ",
+                 
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: Most people think that outsourcing is not new.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: Outsourcing to third-party service providers abroad is not a new idea.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: Outsourcing can be both foreign and/or domestic contracting.",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "exerciseTag": "Exercise 2.5",
+                "text": "Contrary to popular belief, outsourcing as such is not new. In fact, it has been around for as long as work specialization has existed. But outsourcing as we know it today  really took off near the turn of the 21st century when several companies in the US started contracting out some of their in-house business functions, such as general maintenance of the premises and catering. Outsourcing IT, payroll and accounting to domestic service providers followed. ",
+                "question": "2.5 In this context, “foreign contracting” means ",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: that the third party service provider can be from another country.",
+                        "value": true
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: the company that provides the service employs foreign workers.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: that third party contractors employ a combination of locals and foreigners.",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "exerciseTag": "Exercise 2.6",
+                "text": "Partly due to the fact that these types of services could  increasingly be done online, companies soon realised that they could outsource almost anything to service providers abroad. As companies started shopping around for the cheapest service provider, the practice of foreign contracting went off the charts. Charts that might show an increase in profit, but which also track an alarming increase in domestic unemployment. ",
+                "question": "2.6 What is implied in the final two sentences of the text?",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: That outsourcing is a double-edged sword.",
+                        "value": true
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: That domestic unemployment is on the rise everywhere in the world.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: That people are increasingly shopping abroad for the best price.",
+                        "value": false
+                    }
+                ]
+            }
+            
+
+        ]
+    },
+    {
+        "id": "3",
+        "exerciseHeader": "Exercise 3",
+        "exerciseIntro": "Read the text carefully and then answer the questions. Choose the best alternative for each item.",
+        "color": "#f5a442",
+        "items": [
+            {
+                "id": 1,
+                "exerciseTag": "Exercise 3.1",
+                "text": "“Are you fond of a sea voyage?” was her question. I explained that my fondness for a sea voyage had yet to undergo the test of experience;<br> “Oh, how charming!” cried she. “I quite envy you the novelty: first impressions, you know, are so pleasant. Now I have made so many, I quite forget the first: I am quite blasé about the sea and all that.” I could not help smiling“ “Why do you laugh at me?” she inquired, with a frank testiness that pleased me better than her other talk. “Because you are so young to be blasé about anything.”",
+                "question": "3.1 What is meant by “blasé” in this context?",
+                "options": [
+                    
+             {
+                        "id": "1",
+                        "text": "a: content with new experiences",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: indifferent to new experiences",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: worried about new experiences",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "exerciseTag": "Exercise 3.2",
+                "text": "“I am seventeen” (a little piqued).<br> “You hardly look sixteen. Do you like travelling alone?”<br> “Bah! I care nothing about it. I have crossed the Channel ten times, alone; but then I take care never to be long alone: I always make friends… Are you going to school?”<br> “No.”",
+                "question": "3.2 What is most likely true about the narrator?",
+               
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a:  She dislikes the girl because she is showing off.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: She is worried about the girl travelling on her own.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: She has never travelled by ship before.",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "exerciseTag": "Exercise 3.3",
+                "text": "She stared, then carelessly ran on. “I am going to school. Oh, the number of foreign schools I have been at in my life! And yet I am quite an ignoramus. I know nothing – nothing in the world – I assure you; except that I play and dance beautifully. And French and German of course I know, to speak; but I can’t read or write them very well. Do you know they wanted me to translate a page of an easy German book into English the other day, and I couldn’t do it. Papa was so mortified: he says it looks as if M. de Bassompierre – my godfather, who pays all my school bills – had thrown away all his money… ",
+                "question": "3.3  What is implied about the girl?",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: She is ignorant and bad at languages.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: She is indiscreet, but harmless. ",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: She comes from a wealthy family and her father doesn’t care about academic results.",
+                        "value": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "exerciseHeader": "Exercise 4",
+        "exerciseIntro": "Read the text carefully and then answer the questions. Choose the best alternative for each item.",
+        "color": "#f5d142",
+        "items": [
+            {
+                "id": 1,
+                "exerciseTag": "Exercise 4.1",
+                "text": "“Are you fond of a sea voyage?” was her question. I explained that my fondness for a sea voyage had yet to undergo the test of experience;“Oh, how charming!” cried she. “I quite envy you the novelty: first impressions, you know, are so pleasant. Now I have made so many, I quite forget the first: I am quite blasé about the sea and all that.” I could not help smiling“ “Why do you laugh at me?” she inquired, with a frank testiness that pleased me better than her other talk. “Because you are so young to be blasé about anything.”",
+                "question": "4.1 What is meant by “blasé” in this context?",
+                "options": [
+                    
+             {
+                        "id": "1",
+                        "text": "a: content with new experiences",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: indifferent to new experiences",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: worried about new experiences",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "exerciseTag": "Exercise 4.2",
+                "text": "“I am seventeen” (a little piqued).“You hardly look sixteen. Do you like travelling alone?” “Bah! I care nothing about it. I have crossed the Channel ten times, alone; but then I take care never to be long alone: I always make friends… Are you going to school?”“No.”",
+                "question": "4.2 What is most likely true about the narrator?",
+               
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a:  She dislikes the girl because she is showing off.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: She is worried about the girl travelling on her own.",
+                        "value": false
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: She has never travelled by ship before.",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "exerciseTag": "Exercise 4.3",
+                "text": "She stared, then carelessly ran on. “I am going to school. Oh, the number of foreign schools I have been at in my life! And yet I am quite an ignoramus. I know nothing – nothing in the world – I assure you; except that I play and dance beautifully. And French and German of course I know, to speak; but I can’t read or write them very well. Do you know they wanted me to translate a page of an easy German book into English the other day, and I couldn’t do it. Papa was so mortified: he says it looks as if M. de Bassompierre – my godfather, who pays all my school bills – had thrown away all his money… ",
+                "question": "4.3  What is implied about the girl?",
+                
+                "options": [
+                    {
+                        "id": "1",
+                        "text": "a: She is ignorant and bad at languages.",
+                        "value": false
+                    },
+                    {
+                        "id": "2",
+                        "text": "b: She is indiscreet, but harmless. ",
+                        "value": true
+                    },
+                    {
+                        "id": "3",
+                        "text": "c: She comes from a wealthy family and her father doesn’t care about academic results.",
+                        "value": false
+                    }
+                ]
+            }
+        ]
+    }
+]
