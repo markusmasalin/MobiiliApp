@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Alert, FlatList, TouchableOpacity } from 'react
 import * as SQLite from 'expo-sqlite';
 import { Input, Header, ListItem, Button, Card } from 'react-native-elements';
 import ExerciseGridTile from './ExerciseGridTile'
+import { RotationGestureHandler } from 'react-native-gesture-handler';
 
 const db = SQLite.openDatabase('proabi.db');
 
@@ -22,8 +23,13 @@ export default function HomeScreen({route, navigation }) {
       tx.executeSql('create table if not exists proabi (id integer primary key not null, name text, password text,  points number);');
     });
     updateList()
-    
+    checkingNewPoints()
   }, []);
+
+
+    useEffect(() => {
+      checkingNewPoints()
+    });
 
   const fetchUser = () => {
     const u = users.filter(n => {
@@ -32,6 +38,7 @@ export default function HomeScreen({route, navigation }) {
       )
     })
     setUser(u[0])
+    setPoints(u[0].points)
     console.log(user, 'user')
   }
   console.log(users)
@@ -50,24 +57,45 @@ export default function HomeScreen({route, navigation }) {
         setUsers(rows._array)
       ); 
     });
+    console.log(users, 'users')
   }
 
 
   const logOut = (p) => {
     setPoints(p)
-    console.log(points)
-  }
-
-  const givePoints = () => {
-    setPoints(user.points + data.points)
-    console.log(user)
-    db.transaction(
-      tx => {
-        tx.executeSql(`update from proabi set points values(?) where id = ?;`, [points, user.id]);
-      }, null, updateList
-    )    
+   
   }
   
+  console.log(route, 'route')
+  console.log(route.params, 'routeparams')
+  
+  
+  const checkingNewPoints = () => {
+  if(route.params === undefined) {
+  } else { 
+    if(route.params.data === undefined) {
+      console.log('ei dataa')
+    } else {
+      let newPoints = route.params.data.points 
+      console.log(newPoints, 'uudet pisteet')
+      if(newPoints > user.points ){
+        console.log(newPoints, 'more points')
+        setUser(route.params.data)  
+        console.log(user, 'user') 
+        console.log(user.id, 'user.id')
+         db.transaction(
+          tx => {
+            tx.executeSql(`update proabi set points = ${newPoints} where id = ${user.id};`);
+          }, null, updateList
+        )
+     
+        }
+      }
+      
+    }
+  }
+
+ 
   // Delete user
   const deleteItem = (id) => {
     db.transaction(
@@ -108,7 +136,7 @@ export default function HomeScreen({route, navigation }) {
       <ExerciseGridTile
         title={itemData.item.exerciseHeader}
         color={itemData.item.color}
-        onSelect={() => navigation.navigate('Exercise', {data: itemData.item})}
+        onSelect={() => navigation.navigate('Exercise', {data: itemData.item, user: user})}
       />
     );
   };

@@ -22,13 +22,20 @@ export default function Exercise ({ route, navigation }) {
     const [headline, setHeadline] = useState('')
     const [counter, setCounter] = useState(0)
     const [points, setPoints] = useState(0)
+    const [user, setUser] = useState({})
    
     useEffect(() => {
+        console.log(route.params, 'routeparams')
+        console.log(route.params.user, 'user')
         const { data } = route.params
+        const {u} = route.params.user
+        console.log(u, 'u')
     //    let exercises = require('../assets/data/exercises.json');
         setQuestions(data.items)
         setQuestion(data.items[0])
         setHeadline(data.exerciseHeader)
+        setUser(route.params.user)
+        console.log(user, 'user in Exercise')
         Alert.alert(
             data.exerciseHeader, 
             data.exerciseIntro,
@@ -40,46 +47,53 @@ export default function Exercise ({ route, navigation }) {
     }, []);
 
     const checkTheAnswer = (item) => {
-        let p = points
-        console.log('item value', item)
+        let p = user.points
         if (item.value === true) {
-
-            setPoints(p +1)
+            setPoints(points +1) 
+            console.log(user.points, 'points before')
+            setUser({...user, points: p +1})
             Alert.alert(
                 "Congratulation",
                 "Your answer is right",
                 [
-                  { text: "OK", onPress: () => console.log("OK Pressed") }
+                  { text: "OK", onPress: () => nextRound() }
                     ],
                     { cancelable: false }
-              );     
+              );   
+           
         } else {
             Alert.alert(
                 "Sorry, :(",
                 "Your answer is wrong",
                 [
-                  { text: "OK", onPress: () => console.log("OK Pressed") }
+                  { text: "OK", onPress: () => nextRound() }
                     ],
                     { cancelable: false }
-              );
+              )   
         }
+    }
+
+    const nextRound = () => {
         if( counter < questions.length -1) {
             let count = counter +1
             setQuestion(questions[count])
             setCounter(count)
         } else {
-            Alert.alert(
-                "That was the final question",
-                "Your points are " + p + "/" + questions.length,
-                [
-                  { text: "OK", onPress: () => navigation.navigate('Home', {data:p})}
-                    ],
-                    { cancelable: false }
-              );  
+            finalRound()
         }
-    
     }
     
+    const finalRound = () => { 
+        let p = points
+        Alert.alert(
+            "That was the final question",
+            "Your points are " + p + "/" + questions.length,
+            [
+              { text: "OK", onPress: () => navigation.navigate('Home', {data: user})}
+                ],
+                { cancelable: false }
+          );  
+    }
 
     return (
         <View style={styles.container}>
